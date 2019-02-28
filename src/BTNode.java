@@ -30,14 +30,6 @@ public class BTNode {
         this.rightChild = rightChild;
     }
 
-    public BTNode getParent() {
-        return parent;
-    }
-
-    public void setParent(BTNode parent) {
-        this.parent = parent;
-    }
-
     public String getData() {
         return data;
     }
