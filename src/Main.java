@@ -64,7 +64,7 @@ public class Main {
                     eternalPrison = false;
                     System.out.println("\nWho are you thinking of?");
                     response = Systemdotin.nextLine();
-                    try {//TODO This doesnt work, please fix
+                    try {
                         Files.write(Paths.get(Main.class.getClassLoader().getResource("NewNames.txt").getPath()), (response+"\n").getBytes(), StandardOpenOption.APPEND);
                     } catch (IOException e) { }
                     System.out.println("\nThank you for playing Wackinator");
