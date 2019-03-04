@@ -1,6 +1,7 @@
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
@@ -22,7 +23,7 @@ public class Main {
 
         BTNode curr = BinaryTreeHelper.deserialize(serializedTree);
         Scanner Systemdotin = new Scanner(System.in);
-        /////////////////////////////////////////////////////////////////////
+
         help();
 
         while(curr.getLeftChild() != null & curr.getRightChild() != null){
@@ -64,8 +65,9 @@ public class Main {
                     System.out.println("\nWho are you thinking of?");
                     response = Systemdotin.nextLine();
                     try {//TODO This doesnt work, please fix
-                        Files.write(Paths.get(Main.class.getClassLoader().getResource("NewNames.txt").getPath()), response.getBytes(), StandardOpenOption.APPEND);
-                    } catch (IOException e) {System.out.println("oopsie");}
+                        Files.write(Paths.get(Main.class.getClassLoader().getResource("NewNames.txt").getPath()), (response+"\n").getBytes(), StandardOpenOption.APPEND);
+                    } catch (IOException e) { }
+                    System.out.println("\nThank you for playing Wackinator");
                     break;
                 case "--help":
                     help();
